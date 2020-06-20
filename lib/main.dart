@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // WidgetsApp 
+  // WidgetsApp
   // MaterialApp
   // CuoertinoApp
-  runApp(MaterialApp(
-    home: HomePage(),
-    theme: ThemeData(
-      primaryColor: Colors.purple
+  runApp(
+    MaterialApp(
+      home: HomePage(),
+      theme: ThemeData(primaryColor: Colors.purple),
     ),
-  ),);
+  );
 }
 
 class HomePage extends StatelessWidget {
@@ -24,10 +24,36 @@ class HomePage extends StatelessWidget {
         title: Text('Flutter App'),
       ),
       body: Container(
-        child: Text('Hi Flutter Body'),
+        height: 100,
+        color: Colors.grey,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.all(10),
+              width: 100,
+              height: 100,
+              alignment: Alignment.center,
+              color: Colors.red,
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              width: 100,
+              height: 100,
+              alignment: Alignment.center,
+              color: Colors.yellow,
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              width: 100,
+              height: 100,
+              alignment: Alignment.center,
+              color: Colors.green,
+            )
+          ],
+        ),
       ),
     );
   }
 }
-
-
