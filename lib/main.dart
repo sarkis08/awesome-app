@@ -23,37 +23,48 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Flutter App'),
       ),
-      body: Container(
-        height: 100,
-        color: Colors.grey,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+      drawer: Drawer(
+        child: ListView(
+          padding: const EdgeInsets.all(0),
           children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(10),
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
-              color: Colors.red,
+            // DrawerHeader(
+            //   child: Text('Drawer Header'),
+            //   decoration: BoxDecoration(color: Colors.purple,),
+            //   ),
+            UserAccountsDrawerHeader(
+              accountName: Text('Henry Kormoh'), 
+              accountEmail: Text('exmaple@gmail.com'),
+              currentAccountPicture: CircleAvatar(backgroundImage: NetworkImage("https://webwiser.netlify.app/img/webwiser-sm.jpg"),)
+              ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Henry Kormoh'),
+              subtitle: Text('Engineer'),
+              trailing: Icon(Icons.edit),
+              onTap: () {},
             ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
-              color: Colors.yellow,
-            ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
-              color: Colors.green,
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text('example@gmail.com'),
+              trailing: Icon(Icons.edit),
+              onTap: () {},
             )
           ],
         ),
       ),
+      body: Center(
+        child: Container(
+          height: 100,
+          width: 100,
+          color: Colors.grey,
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
+        backgroundColor: Colors.purple,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
