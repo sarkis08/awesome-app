@@ -1,3 +1,5 @@
+import 'package:awesome_app/utils/constants.dart';
+
 import 'home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -69,11 +71,13 @@ class _LoginPageState extends State<LoginPage> {
                               onPressed: () {
                                 formKey.currentState.validate();
 
+                                Constants.prefs.setBool("loggedIn", true);
+
                                 // Navigator.push(
                                 //     context,
                                 //     MaterialPageRoute(
                                 //         builder: (context) => HomePage()));
-                                Navigator.pushNamed(
+                                Navigator.popAndPushNamed(
                                     context, HomePage.routeName);
                               },
                               child: Text(
